@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue 跳转页面</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #f8f9fa;
+    }
+    #app {
+      text-align: center;
+      background: #fff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+    button {
+      padding: 14px 28px;
+      border: none;
+      border-radius: 999px;
+      background: #ff2f6d;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      background: #e82760;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>欢迎使用 Vue 页面</h1>
+    <p>点击下方按钮将跳转到哔哩哔哩</p>
+    <button @click="goToBilibili">跳转哔哩哔哩</button>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      methods: {
+        goToBilibili() {
+          window.location.href = 'https://www.bilibili.com/';
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
